@@ -51,15 +51,38 @@ nav{
 }
 
 
-section.diary{
+section.diary {
 	background-color: white;
 	position: absolute;
-	top:20%;
-	left:10%;
+	top: 20%;
+	left: 10%;
 	width: 400px;
 	height: 500px;
 	border-radius: 30px;
 }
+
+.diary{
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: #a0a0a0 #e0e0e0;
+}
+
+	
+/* Webkit系（Chrome, Safari, Edge）用のスクロールバー設定 */
+	section.diary::-webkit-scrollbar {
+		width: 8px; /* 横幅を調整 */
+	}
+	
+	section.diary::-webkit-scrollbar-thumb {
+		background-color: #a0a0a0; /* スクロールバーのつまみ */
+		border-radius: 5px;
+	}
+	
+	section.diary::-webkit-scrollbar-track {
+		background-color: #e0e0e0; /* スクロールバーの背景 */
+	}
+	
+
 
 section.todo{
 	background-color: white;
