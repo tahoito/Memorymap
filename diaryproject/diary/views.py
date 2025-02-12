@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from django.views.generic import CreateView
-from django.views.generic import ListView
+from django.views.generic import TemplateView,ListView
+from django.views.generic import CreateView,DetailView
+
+from diary.models import Diary
+
 from .forms import DiaryForm
 from django.urls import reverse_lazy
 
@@ -9,7 +11,6 @@ from django.urls import reverse_lazy
 
 class IndexView(TemplateView):
     template_name = 'index.html'
-
 
 class DiaryCreateView(CreateView):
     template_name = 'diary_create.html'
@@ -21,3 +22,8 @@ class DiaryCreateCompleteView(TemplateView):
 
 class DiaryListView(ListView):
     template_name = 'diary_list.html'
+    model = Diary
+
+class DiaryDetailView(DetailView):
+    template_name = 'diary_detail.html'
+    model = Diary

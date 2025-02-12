@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MemoryMap</title>
-    <link rel="stylesheet" href="css/destyle.css">
-    <link rel="stylesheet" href="css/style.css">
+    {% load static %}
+    <link rel="stylesheet" href="/static/css/destyle.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+    <!-- ヘッダー -->
     <header>
         <div class="logo">
             <a href="#"><h1>MemoryMap</h1></a>
@@ -17,12 +19,27 @@
                 <li>日記</li>
                 <li>TODO</li>
                 <li>カレンダー</li>
+                <li>プロフィール</li>
             </ul>
         </nav>
     </header>
 
-    <p><a href="{% url 'diary:diary_create' %}">投稿</a></p>
-    <p><a href="{% url 'diary:list' %}">一覧</a></p>
-    
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <section class="diary">
+            <p><a href="{% url 'diary:diary_list' %}">一覧</a></p>
+        </section>
+
+        <section class="todo">
+
+        </section>
+
+        <div class="write">
+            <p><a href="{% url 'diary:diary_create' %}">日記を投稿する</a></p>
+            <p>TODOを書く</p>
+        </div>
+
+    </main>
+
 </body>
 </html>
