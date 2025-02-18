@@ -9,21 +9,8 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header>
-        <div class="logo">
-            <a href="#"><h1>MemoryMap</h1></a>
-        </div>
-        <nav>
-            <ul>
-                <li>日記</li>
-                <li>TODO</li>
-                <li>カレンダー</li>
-                <li>プロフィール</li>
-            </ul>
-        </nav>
-    </header>
-
+    {% extends '/base.html' %}
+    {% block content %}
     <!-- メインコンテンツ -->
     <main class="main">
         <section class="diary">
@@ -52,6 +39,7 @@
         </div>
 
     </main>
+    {% endblock %}
 
 </body>
 </html>

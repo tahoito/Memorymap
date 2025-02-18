@@ -1,7 +1,7 @@
 from time import timezone
 from django.shortcuts import render
 from django.views.generic import TemplateView,ListView
-from django.views.generic import CreateView,DetailView,UpdateView
+from django.views.generic import CreateView,DetailView,UpdateView,DeleteView
 
 from diary.models import Diary
 
@@ -39,3 +39,8 @@ class DiaryUpdateView(UpdateView):
         diary = form.save(commit=False)
         diary.save()
         return super().form_valid(form)
+    
+class DiaryDeleteView(DeleteView):
+    template_name = 'diary_delete.html'
+    model = Diary
+    success_url = reverse_lazy('diary:diary_list')

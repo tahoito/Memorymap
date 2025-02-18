@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemoryMap</title>
+</head>
+<body>
+    <body>
+    <h1>日記の削除</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>{{ diary.date }} {{ diary.title }} を削除します</p>
+        <input type="submit" value="削除">
+    </form>
+</body>
+</html>
