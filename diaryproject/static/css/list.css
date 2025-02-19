@@ -47,11 +47,7 @@ nav{
 	padding-left: 2%;
 }
 
-.fa-user{
-	color: var(--mainColor);
-	font-size: 1.5rem;
-	margin-right: 8px;
-}
+
 
 .main {
     width: 80%;
@@ -80,54 +76,4 @@ section.diary .diary{
 	flex: 1; /* 高さいっぱいに広がる */
 	padding: 20px; /* 内側の余白を追加 */
 	
-}
-
-	
-/* Webkit系（Chrome, Safari, Edge）用のスクロールバー設定 */
-	section.diary::-webkit-scrollbar {
-		width: 8px; /* 横幅を調整 */
-	}
-	
-	section.diary::-webkit-scrollbar-thumb {
-		background-color: #a0a0a0; /* スクロールバーのつまみ */
-		border-radius: 5px;
-	}
-	
-	section.diary::-webkit-scrollbar-track {
-		background-color: #e0e0e0; /* スクロールバーの背景 */
-	}
-	
-h1.mydiary{
-	font-weight: bold;
-	font-size: 40px;
-
-}
-
-section.todo{
-	background-color: white;
-	position: absolute;
-	top:25%;
-	right:15%;
-	width: 450px;
-	height: 260px;
-	border-radius: 30px;
-}
-
-section.todo .content{
-	padding:20px;
-}
-
-h1.today{
-	display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.write {
-	position: absolute;
-	bottom:20%;
-	right:20%;
-	font-size: 18px;
 }

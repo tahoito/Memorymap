@@ -47,11 +47,7 @@ nav{
 	padding-left: 2%;
 }
 
-.fa-user{
-	color: var(--mainColor);
-	font-size: 1.5rem;
-	margin-right: 8px;
-}
+
 
 .main {
     width: 80%;
@@ -66,7 +62,7 @@ section.diary {
 	position: absolute;
 	top: 20%;
 	left: 10%;
-	width: 400px;
+	width: 500px;
 	height: 500px;
 	border-radius: 30px;
 	overflow: hidden;
@@ -78,7 +74,7 @@ section.diary .diary{
 	scrollbar-width: thin;
 	scrollbar-color: #a0a0a0 #e0e0e0;
 	flex: 1; /* 高さいっぱいに広がる */
-	padding: 20px; /* 内側の余白を追加 */
+	padding: 30px; /* 内側の余白を追加 */
 	
 }
 
@@ -97,32 +93,35 @@ section.diary .diary{
 		background-color: #e0e0e0; /* スクロールバーの背景 */
 	}
 	
-h1.mydiary{
-	font-weight: bold;
-	font-size: 40px;
 
-}
-
-section.todo{
-	background-color: white;
-	position: absolute;
-	top:25%;
-	right:15%;
-	width: 450px;
-	height: 260px;
-	border-radius: 30px;
-}
-
-section.todo .content{
-	padding:20px;
-}
-
-h1.today{
-	display: flex;
-    align-items: center;
-    gap: 10px;
+.card-title{
     font-weight: bold;
-    font-size: 30px;
+    padding-top: 10px;
+}
+
+.line{
+    border-width:0.5px;
+    border-style:solid;
+}
+
+.text{
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-date{
+    color: gray;
+    font-size:10px;
+    padding-bottom: 10px;
+}
+
+.btn-primary{
+    font-size:13px;
+    color:gray;
+}
+
+.btn-primary:hover{
+    color:var(--accentColor);
 }
 
 .write {
