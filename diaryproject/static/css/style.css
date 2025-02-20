@@ -98,10 +98,41 @@ section.diary .diary{
 	}
 	
 h1.mydiary{
-	font-weight: bold;
-	font-size: 40px;
+	font-size: 20px;
 
 }
+
+
+.card-title{
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.line{
+    border-width:0.5px;
+    border-style:solid;
+}
+
+.text{
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-date{
+    color: gray;
+    font-size:10px;
+    padding-bottom: 10px;
+}
+
+.btn-primary{
+    font-size:13px;
+    color:gray;
+}
+
+.btn-primary:hover{
+    color:var(--accentColor);
+}
+
 
 section.todo{
 	background-color: white;
@@ -121,8 +152,7 @@ h1.today{
 	display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .write {

@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="{% url 'diary:index' %}">ホーム</a></li>
                 <li><a href="{% url 'diary:diary_list' %}">日記</a></li>
-                <li>TODO</li>
+                <li><a href="{% url 'diary:todo_list' %}">TODO</a></li>
                 <li>カレンダー</li>
                 <li><i class="fa-solid fa-user"></i></li>
             </ul>
@@ -29,7 +29,23 @@
         <section class="diary">
             <div class="diary">
                 <h1 class="mydiary">日記</h1>
-                <p><a href="{% url 'diary:diary_list' %}">一覧</a></p>
+                <div class="row">
+                    {% for diary in diary_list %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
+                                <div class="text">
+                                    <p class="card-text">{{ diary.text|truncatechars:50 }}</p>
+                                    <a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a>
+                                </div>
+                                <p class="card-date">{{ diary.date }}</p>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>  
+                    {% endfor %}  
+                </div>
             </div>
         </section>
 
