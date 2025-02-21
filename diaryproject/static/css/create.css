@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+:root {
+    --mainColor: #BFE7BA;
+    --subColor: white;
+	--accentColor: #9EBD83;
+}
+
+
+html {
+	font-size: 100%;
+	line-height: 1.8;
+}
+body {
+	color: #000000;
+	background-color: var(--mainColor);
+}
+
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:10px 20px;
+	background-color:var(--subColor);
+
+	position: fixed; /* ヘッダーを固定する */
+	top: 0; /* 上部から配置の基準位置を決める */
+	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	z-index: 1000;
+}
+
+nav ul{
+	display:flex;
+	list-style-type: none;
+	justify-content: space-around;
+	font-size: 18px;
+}
+
+nav{
+	width:35%;	
+}
+
+.logo{
+	font-size:2rem;
+	font-weight: bold;
+	padding-left: 2%;
+}
+
+
+
+.main {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+
+section.diary {
+	background-color: var(--subColor);
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	width: 600px;
+	height: 500px;
+	border-radius: 30px;
+}
+
+section.diary .create{
+	padding: 30px; /* 内側の余白を追加 */
+	
+}
+
+
+.btn-primary{
+    font-size:13px;
+    color:gray;
+}
+
+.btn-primary:hover{
+    color:var(--accentColor);
+}
+
+.write {
+	position: absolute;
+	bottom:20%;
+	right:20%;
+	font-size: 18px;
+}

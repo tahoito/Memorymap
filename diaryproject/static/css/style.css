@@ -53,6 +53,17 @@ nav{
 	margin-right: 8px;
 }
 
+/* すべてのリンクのアンダーラインを消す */
+a {
+    text-decoration: none;
+}
+
+/* ホバー時（マウスを乗せたとき）もアンダーラインなし */
+a:hover {
+    text-decoration: none;
+}
+
+
 .main {
     width: 80%;
     max-width: 800px;

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head>
+    {% load bootstrap4 %}
+    {% load widget_tweaks %}
     <meta charset="UTF-8">
     <title>MemoryMap</title>
+    {% bootstrap_css %}
     <link rel="stylesheet" href="/static/css/destyle.css">
-    <link rel="stylesheet" href="/static/css/diary.css">
+    <link rel="stylesheet" href="/static/css/create.css">
 </head>
 <body>
     <header>
@@ -15,18 +18,33 @@
             <ul>
                 <li><a href="{% url 'diary:index' %}">ホーム</a></li>
                 <li><a href="{% url 'diary:diary_list' %}">日記</a></li>
-                <li>TODO</li>
+                <li><a href="{% url 'diary:todo_list' %}">TODO</a></li>
                 <li>カレンダー</li>
                 <li>プロフィール</li>
             </ul>
         </nav>
     </header>
-    
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">記録する</button>
-    </form>
 
+    <section class="diary">
+        <div class="create">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>{{ form.date.label }}</label>
+                    {{ form.date|add_class:"form-control col-2" }}
+                </div>
+                <div class="form-group">
+                    <label>{{ form.title.label }}</label>
+                    {{ form.title|add_class:"form-control col-2" }}
+                </div>
+                <div class="form-group">
+                    <label>{{ form.text.label }}</label>
+                    {{ form.text|add_class:"form-control col-2" }}
+                </div>
+                <button type="submit" class="btn btn-primary">投稿</button>
+            </form>
+        </div>
+    </section>
+    
 </body>
 </html>

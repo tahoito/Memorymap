@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    {% load bootstrap4 %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MemoryMap{% endblock %}</title>
+
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/destyle.css' %}">
+    {% block extra_css %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'diary:index' %}"><h1>MemoryMap</h1></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'diary:index' %}">ホーム</a></li>
+                <li><a href="{% url 'diary:diary_list' %}">日記</a></li>
+                <li><a href="{% url 'diary:todo_list' %}">TODO</a></li>
+                <li>カレンダー</li>
+                <li><i class="fa-solid fa-user"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% bootstrap_javascript %}
+</body>
+</html>
