@@ -3,7 +3,8 @@
 :root {
     --mainColor: #BFE7BA;
     --subColor: white;
-	--accentColor: #9EBD83;
+	--accentColor: #88c057;
+	--btnColor:#417c0d;
 }
 
 
@@ -20,7 +21,7 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding:10px 20px;
+	padding:15px 10px;
 	background-color:var(--subColor);
 
 	position: fixed; /* ヘッダーを固定する */
@@ -39,6 +40,7 @@ nav ul{
 
 nav{
 	width:35%;	
+	padding-top:5px;
 }
 
 .logo{
@@ -49,8 +51,28 @@ nav{
 
 .fa-user{
 	color: var(--mainColor);
-	font-size: 1.5rem;
-	margin-right: 8px;
+	font-size: 1.8rem;
+}
+
+.user-icon{
+	width: 40px; /* 円のサイズ */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000; /* 枠線の色 */
+    border-radius: 50%; /* 完全な円にする */
+}
+
+/* すべてのリンクのアンダーラインを消す */
+a {
+    text-decoration: none;
+}
+
+/* ホバー時（マウスを乗せたとき）もアンダーラインなし */
+a:hover {
+    text-decoration: none;
+	color: var(--btnColor);
 }
 
 .main {
@@ -64,10 +86,27 @@ nav{
 section.todo {
 	background-color: var(--subColor);
 	position: absolute;
-	bottom: 10%;
-	left: 20%;
-	width: 500px;
-	height: 250px;
+	top: 20%;
+	left: 15%;
+	width: 400px;
+	height: 450px;
 	border-radius: 30px;
 }
 
+section.todo .content{
+	padding:20px;
+}
+
+section.create{
+	background-color: var(--subColor);
+	position: absolute;
+	top: 25%;
+	right: 15%;
+	width: 400px;
+	height: 300px;
+	border-radius: 30px;
+}
+
+section.create .create{
+	padding:20px;
+}

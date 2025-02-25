@@ -3,7 +3,8 @@
 :root {
     --mainColor: #BFE7BA;
     --subColor: white;
-	--accentColor: #9EBD83;
+	--accentColor: #88c057;
+	--btnColor:#417c0d;
 }
 
 
@@ -20,7 +21,7 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding:10px 20px;
+	padding:15px 10px;
 	background-color:var(--subColor);
 
 	position: fixed; /* ヘッダーを固定する */
@@ -39,6 +40,7 @@ nav ul{
 
 nav{
 	width:35%;	
+	padding-top:5px;
 }
 
 .logo{
@@ -47,6 +49,31 @@ nav{
 	padding-left: 2%;
 }
 
+.fa-user{
+	color: var(--mainColor);
+	font-size: 1.8rem;
+}
+
+.user-icon{
+	width: 40px; /* 円のサイズ */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000; /* 枠線の色 */
+    border-radius: 50%; /* 完全な円にする */
+}
+
+/* すべてのリンクのアンダーラインを消す */
+a {
+    text-decoration: none;
+}
+
+/* ホバー時（マウスを乗せたとき）もアンダーラインなし */
+a:hover {
+    text-decoration: none;
+	color: var(--btnColor);
+}
 
 
 .main {

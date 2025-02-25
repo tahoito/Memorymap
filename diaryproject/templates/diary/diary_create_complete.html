@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <title>MemoryMap</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="{% url 'diary:index' %}"><h1>MemoryMap</h1></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{% url 'diary:index' %}">ホーム</a></li>
-                <li><a href="{% url 'diary:diary_list' %}">日記</a></li>
-                <li><a href="{% url 'diary:todo_list' %}">TODO</a></li>
-                <li>カレンダー</li>
-                <li><i class="fa-solid fa-user"></i></li>
-            </ul>
-        </nav>
-    </header>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ホーム - MemoryMap{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
+
+{% block content %}
 <p>日記の投稿が完了しました！</p>
 <a href="{% url 'diary:index' %}">トップへ戻る</a>
-</body>
-</html>
+{% endblock %}

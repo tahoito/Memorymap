@@ -1,11 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}ホーム - MemoryMap{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
+
+{% block content %}
     <main class="main">
         <section class="diary">
             <div class="diary">
                 <div class="row">
                     {% for diary in diary_list %}
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
+                    <div class="col-12 mb-4"> 
+                        <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
                                 <div class="text">

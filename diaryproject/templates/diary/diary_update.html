@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <title>MemoryMap</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ホーム - MemoryMap{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
+
+{% block content %}
 <h1>日記の編集</h1>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="保存">
 </form>
-</body>
-</html>
+{% endblock %}

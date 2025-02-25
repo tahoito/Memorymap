@@ -6,9 +6,9 @@ class DiaryForm(forms.ModelForm):
         model = Diary
         fields = {'date','title','text'}
         widget = {
-            'date': forms.DateInput(attrs={'class': 'form-control'}),
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'text': forms.TextInput(attrs={'class': 'form-control'}),
+            'date': forms.TextInput(attrs={'class': 'form-control col-2'}),
+            'title': forms.TextInput(attrs={'class': 'form-control col-2'}),
+            'text': forms.TextInput(attrs={'class': 'form-control col-2'}),
             }
         
 class TodoForm(forms.ModelForm):
