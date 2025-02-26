@@ -61,3 +61,8 @@ class TodoCreateView(CreateView):
     template_name = 'todo/todo_create.html'
     form_class = TodoForm
     success_url = reverse_lazy('diary:todo_list')
+
+class TodoDeleteView(DeleteView):
+    template_name = 'todo/todo_delete.html'
+    model = Todo
+    success_url = reverse_lazy('todo:todo_list')

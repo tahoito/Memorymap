@@ -11,6 +11,15 @@
         <section class="create">
             <div class="create">
                 <h1 class="mytodo">今日やること</h1>
+                <ul class="todo-list">
+                    {% for diary in todo_list %}
+                        <li>
+                            {{ todo.memo }} 
+                        </li>
+                    {% empty %}
+                        <p>やることはありません。</p>
+                    {% endfor %}
+                </ul>
                 <p><a href="{% url 'diary:todo_create' %}">TODOを追加する</a></p>
             </div>
         </section>

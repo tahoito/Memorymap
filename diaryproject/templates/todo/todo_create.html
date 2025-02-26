@@ -7,10 +7,10 @@
 
 {% block content %}
     <main class="main">
-        form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">追加する</button>
-
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">追加する</button>
+        </form>
     </main>
 {% endblock %}
