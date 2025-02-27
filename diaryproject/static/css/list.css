@@ -85,32 +85,13 @@ a:hover {
 }
 
 
-.date{
+.diary{
 	background-color: var(--subColor);
 	position: absolute;
-	top: 20%;
-	left: 10%;
-	width: 250px;
-	height: 50px;
+	top: 25%;
+	left: 15%;
+	width: 600px;
+	height: 350px;
 	border-radius: 30px;
 }
 
-.title{
-	background-color: var(--subColor);
-	position: absolute;
-	top: 40%;
-	left: 10%;
-	width: 300px;
-	height: 60px;
-	border-radius: 30px;
-}
-
-.text{
-	background-color: var(--subColor);
-	position: absolute;
-	top: 50%;
-	left: 10%;
-	width: 500px;
-	height: 250px;
-	border-radius: 30px;
-}

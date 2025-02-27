@@ -1,31 +1,37 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
+
 {% load static %}
 
 {% block title %}ホーム - MemoryMap{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/create.css' %}">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/list.css' %}">{% endblock %}
 
 {% block content %}
 <main class="main">
-    <section class="diary">
-        <div class="create">
-            <form method="post">
-                {% csrf_token %}
+    <div class="create">
+        <form method="post">
+            {% csrf_token %}
+            <div class="date">
                 <div class="form-group">
                     <label>{{ form.date.label }}</label>
                     {{ form.date|add_class:"form-control col-2" }}
                 </div>
+            </div>
+            <div class="title">            
                 <div class="form-group">
                     <label>{{ form.title.label }}</label>
                     {{ form.title|add_class:"form-control col-2" }}
                 </div>
+            </div>
+            <div class="text">
                 <div class="form-group">
                     <label>{{ form.text.label }}</label>
                     {{ form.text|add_class:"form-control col-2" }}
                 </div>
-                <button type="submit" class="btn btn-primary">投稿</button>
-            </form>
-        </div>
-    </section>
+            </div>
+            <button type="submit" class="btn btn-primary">投稿</button>
+        </form>
+    </div>
 </main>
 {% endblock %}
