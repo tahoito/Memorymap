@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'diary',
-    'todo',
     'bootstrap4',
     'widget_tweaks'
 ]

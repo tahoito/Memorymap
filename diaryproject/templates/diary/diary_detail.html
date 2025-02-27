@@ -3,13 +3,15 @@
 
 {% block title %}ホーム - MemoryMap{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/list.css' %}">{% endblock %}
 
 {% block content %}
-<p>{{ diary.date }}</p>
-<p>{{ diary.title }}</p>
-<p>{{ diary.text }}</p>
-<a href="{% url 'diary:index' %}">戻る</a>
-<a href="{% url 'diary:diary_delete' diary.pk %}">削除</a> 
-<a href="{% url 'diary:diary_update' diary.pk %}">編集</a>
+<main class="main">
+    <div class="date">{{ diary.date }}</div>
+    <div class="title">{{ diary.title }}</div>
+    <div class="text"><p>{{ diary.text }}</p></div>
+    <a href="{% url 'diary:index' %}">戻る</a>
+    <a href="{% url 'diary:diary_delete' diary.pk %}">削除</a> 
+    <a href="{% url 'diary:diary_update' diary.pk %}">編集</a>  
+</main>
 {% endblock %}
