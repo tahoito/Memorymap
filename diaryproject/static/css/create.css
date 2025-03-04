@@ -102,22 +102,29 @@ a:hover {
 section.create{
 	background-color: white;
 	position: absolute;
-	top:25%;
+	top:23%;
 	left:10%;
-	width: 550px;
-	height: 400px;
+	width: 600px;
+	height: 450px;
 	border-radius: 30px;
 }
 
 section.create .create{
 	padding-left: 5%;
-	padding-top: 5%;
+	padding-top: 3%;
 }
-
 
 .write {
 	position: absolute;
 	bottom:20%;
 	right:20%;
 	font-size: 18px;
+}
+
+.custom-textarea {
+	height: auto; /* 高さを自動調整 */
+	min-height: 200px; /* 最低でも200pxの高さ */
+	resize: vertical; /* ユーザーが自由に伸ばせる */
+	vertical-align: top; /* テキストを上寄せ */
+	padding: 10px; /* 余白をつける */
 }

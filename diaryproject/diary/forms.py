@@ -8,9 +8,12 @@ class DiaryForm(forms.ModelForm):
         widget = {
             'date': forms.TextInput(attrs={'class': 'form-control col-2'}),
             'title': forms.TextInput(attrs={'class': 'form-control col-2'}),
-            'text': forms.TextInput(attrs={'class': 'form-control col-2','style': 'height: 300px;'}),
-            }
-        
+            'text': forms.Textarea(attrs={
+                'class': 'form-control custom-textarea',
+                'rows': 6  # ← 6行分の高さを確保
+            }),  
+        }
+
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
