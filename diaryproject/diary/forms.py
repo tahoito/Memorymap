@@ -8,7 +8,7 @@ class DiaryForm(forms.ModelForm):
         widget = {
             'date': forms.TextInput(attrs={'class': 'form-control col-2'}),
             'title': forms.TextInput(attrs={'class': 'form-control col-2'}),
-            'text': forms.TextInput(attrs={'class': 'form-control col-2'}),
+            'text': forms.TextInput(attrs={'class': 'form-control col-2','style': 'height: 300px;'}),
             }
         
 class TodoForm(forms.ModelForm):

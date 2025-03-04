@@ -9,29 +9,33 @@
 
 {% block content %}
 <main class="main">
-    <div class="create">
-        <form method="post">
-            {% csrf_token %}
-            <div class="date">
-                <div class="form-group">
-                    <label>{{ form.date.label }}</label>
-                    {{ form.date|add_class:"form-control col-2" }}
+    <section class="create">
+        <div class="create">
+            <form method="post">
+                {% csrf_token %}
+                <div class="date">
+                    <div class="form-group">
+                        <label>{{ form.date.label }}</label>
+                        {{ form.date|add_class:"form-control col-4" }}
+                    </div>
                 </div>
-            </div>
-            <div class="title">            
-                <div class="form-group">
-                    <label>{{ form.title.label }}</label>
-                    {{ form.title|add_class:"form-control col-2" }}
+                <div class="title">            
+                    <div class="form-group">
+                        <label>{{ form.title.label }}</label>
+                        {{ form.title|add_class:"form-control col-6" }}
+                    </div>
                 </div>
-            </div>
-            <div class="text">
-                <div class="form-group">
-                    <label>{{ form.text.label }}</label>
-                    {{ form.text|add_class:"form-control col-2" }}
+                <div class="text">
+                    <div class="form-group">
+                        <label>{{ form.text.label }}</label>
+                        {{ form.text|add_class:"form-control col-6" }}
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary">投稿</button>
-        </form>
+            </form>
+        </div>
+    </section>
+    <div class="write">
+        <button type="submit" class="btn btn-primary">日記を投稿する</button>
     </div>
 </main>
 {% endblock %}
