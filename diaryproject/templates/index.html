@@ -12,7 +12,7 @@
             <h1 class="mydiary">日記</h1>
             <div class="row">
                 {% for diary in diary_list %}
-                <div class="col-12 mb-4"> 
+                <div class="col-12"> 
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
@@ -41,7 +41,7 @@
 
     <div class="write">
         <p><a href="{% url 'diary:diary_create' %}">日記を投稿する</a></p>
-        <p><a href="{% url 'diary:todo_create' %}">TODOを書く</a></p>
+        <p><a href="{% url 'diary:todo_list' %}">TODOを書く</a></p>
     </div>
 </main>
 {% endblock %}

@@ -17,4 +17,7 @@ class DiaryForm(forms.ModelForm):
 class TodoForm(forms.ModelForm):
     class Meta:
         model = Todo
-        fields = {'id','memo',}
+        fields = {'memo',}
+        widgets = {
+            'memo' : forms.TextInput(attrs={'class': 'form-control col-2'}),
+        }

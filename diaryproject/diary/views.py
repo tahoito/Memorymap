@@ -1,5 +1,5 @@
 from time import timezone
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView
 from django.views.generic import CreateView,DetailView,UpdateView,DeleteView
 
@@ -56,13 +56,23 @@ class DiaryDeleteView(DeleteView):
 class TodoListView(ListView):
     template_name = 'todo/todo_list.html'
     model = Todo 
+    context_object_name = 'todo_list'
 
-class TodoCreateView(CreateView):
-    template_name = 'todo/todo_create.html'
-    form_class = TodoForm
-    success_url = reverse_lazy('diary:todo_list')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = TodoForm()
+        return context 
+    
+    def post(self,request,*args,**kwargs):
+        form = TodoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('diary:todo_list')
+        return self.get(request, *args, **kwargs) 
+
+    
 
 class TodoDeleteView(DeleteView):
     template_name = 'todo/todo_delete.html'
     model = Todo
-    success_url = reverse_lazy('todo:todo_list')
+    success_url = reverse_lazy('diary:todo_list')
