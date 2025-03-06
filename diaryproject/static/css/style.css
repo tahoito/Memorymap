@@ -70,7 +70,8 @@ a {
 }
 
 /* ホバー時（マウスを乗せたとき）もアンダーラインなし */
-a:hover {
+a:hover,
+a:active {
     text-decoration: none;
 	color: var(--btnColor);
 }
@@ -157,10 +158,11 @@ h1.mydiary{
 	border: none;
 }
 
-.btn-primary:hover{
-    color:var(--btnColor);
-	background-color: transparent;
-	border: none;
+.btn-primary:hover,
+.btn-primary:active{
+    color: var(--btnColor)!important;
+	background-color: transparent!important;
+	border: none!important;
 }
 
 
@@ -192,6 +194,7 @@ h1.today{
 	font-size: 18px;
 }
 
-.write :hover{
+.write :hover,
+.write :active{
 	color:var(--btnColor);
 }

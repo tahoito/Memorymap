@@ -70,7 +70,8 @@ a {
 }
 
 /* ホバー時（マウスを乗せたとき）もアンダーラインなし */
-a:hover {
+a:hover,
+a:active {
     text-decoration: none;
 	color: var(--btnColor);
 }
@@ -91,7 +92,8 @@ a:hover {
 	border: var(--accentColor);
 }
 
-.btn-primary:hover{
+.btn-primary:hover,
+.btn-primary:active{
     color:white;
 	background-color: var(--accentColor);
 	border: var(--accentColor);

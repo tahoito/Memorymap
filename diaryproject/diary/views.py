@@ -76,3 +76,14 @@ class TodoDeleteView(DeleteView):
     template_name = 'todo/todo_delete.html'
     model = Todo
     success_url = reverse_lazy('diary:todo_list')
+
+class TodoUpdateView(UpdateView):
+    template_name = 'todo/todo_update.html'
+    model = Todo
+    fields = ('memo')
+    success_url = reverse_lazy('diary:todo_list')
+
+    def form_valid(self, form):
+        diary = form.save(commit=False)
+        diary.save()
+        return super().form_valid(form)

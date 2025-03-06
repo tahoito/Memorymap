@@ -33,9 +33,16 @@
     <section class="todo">
         <div class="content">
             <h1 class="today"><i class="fa-regular fa-pen-to-square"></i>やること</h1>
-            {% for todo in todo_list %}
-            <p>{{ todo.memo }}</p>
-            {% endfor %}
+            <ul class="todo-list">
+                {% for diary in todo_list %}
+                    <li>
+                        {{ diary.memo }} 
+                    </li>
+                    <div class="line"></div>
+                {% empty %}
+                    <p>やることはありません。</p>
+                {% endfor %}
+            </ul>
         </div>
     </section>
 

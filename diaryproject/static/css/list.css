@@ -70,7 +70,8 @@ a {
 }
 
 /* ホバー時（マウスを乗せたとき）もアンダーラインなし */
-a:hover {
+a:hover,
+a:active {
     text-decoration: none;
 	color: var(--btnColor);
 }

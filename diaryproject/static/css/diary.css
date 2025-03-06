@@ -70,7 +70,8 @@ a {
 }
 
 /* ホバー時（マウスを乗せたとき）もアンダーラインなし */
-a:hover {
+a:hover,
+a:active {
     text-decoration: none;
 	color: var(--btnColor);
 }
@@ -147,7 +148,8 @@ section.diary .diary{
     color:gray;
 }
 
-.btn-primary:hover{
+.btn-primary:hover,
+.btn-primary:active{
     color:var(--accentColor);
 }
 
