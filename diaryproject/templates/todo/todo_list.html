@@ -17,8 +17,7 @@
                         {% csrf_token %}
                         <div class="memo">
                             <div class="form-group">
-                                <label>{{ form.memo.label }}</label>
-                                {{ form.memo|add_class:"form-control col-4" }}
+                                {{ form.memo|add_class:"form-control col-6" }}
                             </div>
                         </div>
                         <button type="submit">追加する</button>
