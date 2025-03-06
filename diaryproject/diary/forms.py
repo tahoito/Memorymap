@@ -19,5 +19,8 @@ class TodoForm(forms.ModelForm):
         model = Todo
         fields = {'memo',}
         widgets = {
-            'memo' : forms.TextInput(attrs={'class': 'form-control col-2'}),
+            'memo' : forms.Textarea(attrs={
+                'class': 'form-control custom-memo',
+                'rows': 3  # ← 6行分の高さを確保
+            }),
         }

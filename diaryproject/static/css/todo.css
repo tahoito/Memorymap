@@ -102,13 +102,13 @@ section.create{
 	position: absolute;
 	top: 25%;
 	right: 10%;
-	width: 250px;
-	height: 250px;
+	width: 270px;
+	height: 350px;
 	border-radius: 30px;
 }
 
 section.create .create{
-	padding-top:40px;
+	padding-top:30px;
 	display: flex;  /* ✅ Flexbox を適用 */
     flex-direction: column;  /* ✅ 縦方向に並べる */
     align-items: center;  /* ✅ 中央揃え (横方向) */
@@ -116,11 +116,15 @@ section.create .create{
     text-align: center;  /* ✅ `h1` のテキストを中央揃え */
 }
 
-.create form {
-    width: 100%;  /* ✅ フォームを親要素いっぱいに広げる */
-    max-width: 650px;  /* ✅ 画面が広くても、最大幅を600pxに制限 */
-    margin: auto;  /* ✅ 完全に中央揃え */
-    padding: 20px;  
-    box-sizing: border-box;  /* ✅ `padding` を含めた幅に調整 */
-}
 
+.custom-memo {
+	width: 100%;
+	height: auto; 
+	min-height: 200px; 
+	resize: vertical; 
+	vertical-align: top; 
+	box-sizing: border-box;  
+	margin:auto;
+	text-align: left;
+	padding: 10px;
+}
