@@ -11,44 +11,44 @@
 <main class="main">
     <section class="create">
         <div class="create">
-            <form method="post">
-                {% csrf_token %}
-                <div class="date">
-                    <div class="form-group">
-                        <label>{{ form.date.label }}</label>
-                        {{ form.date|add_class:"form-control col-4" }}
-                    </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="date">
+                <div class="form-group">
+                    <label>{{ form.date.label }}</label>
+                    {{ form.date|add_class:"form-control col-4" }}
                 </div>
-                <div class="title">            
-                    <div class="form-group">
-                        <label>{{ form.title.label }}</label>
-                        {{ form.title|add_class:"form-control col-6" }}
-                    </div>
+            </div>
+            <div class="title">            
+                <div class="form-group">
+                    <label>{{ form.title.label }}</label>
+                    {{ form.title|add_class:"form-control col-6" }}
                 </div>
-                <div class="text">
-                    <div class="form-group">
-                        <label>{{ form.text.label }}</label>
-                        {{ form.text|add_class:"form-control col-10 custom-textarea" }}
-                    </div>
+            </div>
+            <div class="text">
+                <div class="form-group">
+                    <label>{{ form.text.label }}</label>
+                    {{ form.text|add_class:"form-control col-10 custom-textarea" }}
                 </div>
+            </div>
                 
-                {% if form.errors %}
-                <div class="alert alert-danger">
-                    <strong>エラーがあります:</strong>
-                    <ul>
-                    {% for field, errors in form.errors.items %}
-                        {% for error in errors %}
-                            <li>{{ field }}: {{ error }}</li>
-                        {% endfor %}
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <strong>エラーがあります:</strong>
+                <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ field }}: {{ error }}</li>
                     {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-            </form>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
         </div>
     </section>
     <div class="write">
         <button type="submit" class="btn btn-primary">日記を投稿する</button>
     </div>
+    </form>
 </main>
 {% endblock %}

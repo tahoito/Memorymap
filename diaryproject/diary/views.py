@@ -20,10 +20,8 @@ class IndexView(TemplateView):
 class DiaryCreateView(CreateView):
     template_name = 'diary/diary_create.html'
     form_class = DiaryForm
-    success_url = '/diary/create/complete/'
+    success_url = reverse_lazy('diary:diary_list') 
 
-class DiaryCreateCompleteView(TemplateView):
-    template_name = 'diary/diary_create_complete.html'
 
 class DiaryListView(ListView):
     template_name = 'diary/diary_list.html'

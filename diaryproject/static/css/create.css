@@ -97,6 +97,7 @@ a:active {
     color:white;
 	background-color: var(--accentColor);
 	border: var(--accentColor);
+	box-shadow: none !important;
 
 }
 
@@ -116,12 +117,6 @@ section.create .create{
 	padding-top: 3%;
 }
 
-.write {
-	position: absolute;
-	bottom:20%;
-	right:20%;
-	font-size: 18px;
-}
 
 .custom-textarea {
 	height: auto; /* 高さを自動調整 */
@@ -130,3 +125,26 @@ section.create .create{
 	vertical-align: top; /* テキストを上寄せ */
 	padding: 10px; /* 余白をつける */
 }
+
+.date_detail{
+	font-size:20px;
+	padding-top: 15px;
+}
+
+.title_detail{
+	font-size:20px;
+	padding-top:15px;
+}
+
+.text_detail{
+	padding-top:20px;
+}
+
+
+.write {
+	position: absolute;
+	bottom:20%;
+	right:30%;
+	font-size: 18px;
+}
+

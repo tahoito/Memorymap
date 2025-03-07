@@ -11,20 +11,21 @@
             <div class="diary">
                 <div class="row">
                     {% for diary in diary_list %}
-                    <div class="col-12 mb-4"> 
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
-                                <div class="text">
-                                    <p class="card-text">{{ diary.text|truncatechars:50 }}</p>
-                                    <a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a>
-                                </div>
-                                <p class="card-date">{{ diary.date }}</p>
-                                <div class="line"></div>
+                <div class="col-12"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
+                            <div class="text">
+                                <p class="card-text">{{ diary.text|truncatechars:50 }}</p>
+                                <a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a>
                             </div>
+                            <p class="card-date">{{ diary.date }}</p>
+                            <div class="line"></div>
                         </div>
-                    </div>  
-                    {% endfor %}  
+                    </div>
+                </div>  
+                {% endfor %}  
+            </div>
                 </div>
             </div>
         </section>

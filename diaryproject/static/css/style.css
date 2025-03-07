@@ -163,6 +163,7 @@ h1.mydiary{
     color: var(--btnColor)!important;
 	background-color: transparent!important;
 	border: none!important;
+	box-shadow: none !important;
 }
 
 
@@ -190,8 +191,12 @@ h1.today{
 .write {
 	position: absolute;
 	bottom:20%;
-	right:20%;
+	right:30%;
 	font-size: 18px;
+}
+
+.write p{
+	padding-top:10px;
 }
 
 .write :hover,
