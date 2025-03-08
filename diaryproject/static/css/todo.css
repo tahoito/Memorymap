@@ -148,3 +148,14 @@ section.create .create{
 	text-align: left;
 	padding: 10px;
 }
+
+.card{
+	border: none; /* 枠線を削除 */
+	box-shadow: none; /* 影を削除 */
+}
+
+.line{
+    border-width:0.3px;
+    border-style:solid;
+	margin-top: 5px;
+}

@@ -9,7 +9,7 @@
 <main class="main">
     <section class="diary">
         <div class="diary">
-            <h1 class="mydiary">日記</h1>
+            <h1 class="mydiary"><i class="fa-solid fa-book"></i>日記</h1>
             <div class="row">
                 {% for diary in diary_list %}
                 <div class="col-12"> 
@@ -17,8 +17,9 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
                             <div class="text">
-                                <p class="card-text">{{ diary.text|truncatechars:50 }}</p>
+                            <p class="card-text">{{ diary.text|truncatechars:50 }}
                                 <a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a>
+                            </p>
                             </div>
                             <p class="card-date">{{ diary.date }}</p>
                             <div class="line"></div>
@@ -33,16 +34,22 @@
     <section class="todo">
         <div class="content">
             <h1 class="today"><i class="fa-regular fa-pen-to-square"></i>やること</h1>
-            <ul class="todo-list">
+            <div class="row">
                 {% for diary in todo_list %}
-                    <li>
-                        {{ diary.memo }} 
-                    </li>
-                    <div class="line"></div>
+                <div class="col-12"> 
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="memo">
+                                <p class="card-memo">{{ diary.memo }}</p>
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>  
                 {% empty %}
                     <p>やることはありません。</p>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </section>
 

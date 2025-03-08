@@ -141,9 +141,10 @@ h1.mydiary{
 }
 
 .text{
-    display: flex;
     align-items: baseline;
 }
+
+
 
 .card-date{
     color: gray;
@@ -175,10 +176,31 @@ section.todo{
 	width: 450px;
 	height: 260px;
 	border-radius: 30px;
+	overflow: hidden;
 }
 
 section.todo .content{
-	padding:20px;
+	overflow-y: auto;
+	max-height: 100%;
+	scrollbar-width: thin;
+	scrollbar-color: #a0a0a0 #e0e0e0;
+	flex: 1; /* 高さいっぱいに広がる */
+	padding: 20px; /* 内側の余白を追加 */
+	
+}
+
+/* Webkit系（Chrome, Safari, Edge）用のスクロールバー設定 */
+section.todo::-webkit-scrollbar {
+	width: 8px; /* 横幅を調整 */
+}
+
+section.todo::-webkit-scrollbar-thumb {
+	background-color: #a0a0a0; /* スクロールバーのつまみ */
+	border-radius: 5px;
+}
+
+section.todo::-webkit-scrollbar-track {
+	background-color: #e0e0e0; /* スクロールバーの背景 */
 }
 
 h1.today{

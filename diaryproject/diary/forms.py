@@ -6,7 +6,7 @@ class DiaryForm(forms.ModelForm):
         model = Diary
         fields = {'date','title','text'}
         widgets = {
-            'date': forms.TextInput(attrs={'class': 'form-control col-2'}),
+            'date': forms.DateInput(attrs={'class': 'form-control col-2'}),
             'title': forms.TextInput(attrs={'class': 'form-control col-2'}),
             'text': forms.Textarea(attrs={
                 'class': 'form-control custom-textarea',

@@ -15,8 +15,9 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['diary_list'] = Diary.objects.all() 
+        context['todo_list'] = Todo.objects.all() 
         return context 
-
+    
 class DiaryCreateView(CreateView):
     template_name = 'diary/diary_create.html'
     form_class = DiaryForm

@@ -115,6 +115,7 @@ section.create{
 section.create .create{
 	padding-left: 5%;
 	padding-top: 3%;
+	padding-right: 5%;
 }
 
 
@@ -133,18 +134,18 @@ section.create .create{
 
 .title_detail{
 	font-size:20px;
-	padding-top:15px;
+	padding-top:30px;
 }
 
 .text_detail{
-	padding-top:20px;
+	padding-top:40px;
 }
 
 
-.write {
+.write_bottom{
 	position: absolute;
-	bottom:20%;
-	right:30%;
+	bottom:15%;
+	right:20%;
 	font-size: 18px;
 }
 

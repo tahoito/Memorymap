@@ -16,8 +16,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
                             <div class="text">
-                                <p class="card-text">{{ diary.text|truncatechars:50 }}</p>
-                                <a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a>
+                                <p class="card-text">{{ diary.text|truncatechars:50 }}<a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a></p>
                             </div>
                             <p class="card-date">{{ diary.date }}</p>
                             <div class="line"></div>
