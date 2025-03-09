@@ -102,7 +102,7 @@ section.diary .diary{
 	scrollbar-width: thin;
 	scrollbar-color: #a0a0a0 #e0e0e0;
 	flex: 1; /* 高さいっぱいに広がる */
-	padding: 30px; /* 内側の余白を追加 */
+	padding: 20px; /* 内側の余白を追加 */
 	
 }
 
@@ -121,21 +121,30 @@ section.diary .diary{
 		background-color: #e0e0e0; /* スクロールバーの背景 */
 	}
 	
+h1.mydiary{
+	font-size: 20px;
+
+}
+
+.card{
+	border: none; /* 枠線を削除 */
+	box-shadow: none; /* 影を削除 */
+}
 
 .card-title{
     font-weight: bold;
-    padding-top: 10px;
 }
 
 .line{
-    border-width:0.5px;
+    border-width:0.3px;
     border-style:solid;
 }
 
 .text{
-    display: flex;
-    align-items: flex-end;
+    align-items: baseline;
 }
+
+
 
 .card-date{
     color: gray;
@@ -146,16 +155,41 @@ section.diary .diary{
 .btn-primary{
     font-size:13px;
     color:gray;
+	background-color: transparent;
+	border: none;
 }
 
 .btn-primary:hover,
 .btn-primary:active{
-    color:var(--accentColor);
+    color: var(--btnColor)!important;
+	background-color: transparent!important;
+	border: none!important;
+	box-shadow: none !important;
+}
+
+
+section.search{
+	background-color: var(--subColor);
+	position: absolute;
+	top: 25%;
+	right: 10%;
+	width: 380px;
+	height: 250px;
+	border-radius: 30px;
 }
 
 .write {
 	position: absolute;
-	bottom:20%;
-	right:20%;
+	bottom:10%;
+	right:25%;
 	font-size: 18px;
+}
+
+.write p{
+	padding-top:10px;
+}
+
+.write :hover,
+.write :active{
+	color:var(--btnColor);
 }

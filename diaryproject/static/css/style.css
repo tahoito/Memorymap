@@ -171,10 +171,10 @@ h1.mydiary{
 section.todo{
 	background-color: white;
 	position: absolute;
-	top:25%;
+	top:20%;
 	right:15%;
 	width: 450px;
-	height: 260px;
+	height: 350px;
 	border-radius: 30px;
 	overflow: hidden;
 }
@@ -185,7 +185,7 @@ section.todo .content{
 	scrollbar-width: thin;
 	scrollbar-color: #a0a0a0 #e0e0e0;
 	flex: 1; /* 高さいっぱいに広がる */
-	padding: 20px; /* 内側の余白を追加 */
+	padding: 30px; /* 内側の余白を追加 */
 	
 }
 
@@ -210,10 +210,14 @@ h1.today{
     font-size: 20px;
 }
 
+.memo{
+	font-size:18px;
+}
+
 .write {
 	position: absolute;
-	bottom:20%;
-	right:30%;
+	bottom:10%;
+	right:25%;
 	font-size: 18px;
 }
 

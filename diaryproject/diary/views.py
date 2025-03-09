@@ -18,9 +18,10 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['diary_list'] = Diary.objects.all() 
-        context['todo_list'] = Todo.objects.all() 
+        context['diary_list'] = Diary.objects.all().order_by('-id')
+        context['todo_list'] = Todo.objects.all().order_by('-id') 
         return context 
+    
     
 class DiaryCreateView(CreateView):
     template_name = 'diary/diary_create.html'
@@ -31,6 +32,7 @@ class DiaryCreateView(CreateView):
 class DiaryListView(ListView):
     template_name = 'diary/diary_list.html'
     model = Diary
+    queryset = Diary.objects.all().order_by('-id')
 
 class DiaryDetailView(DetailView):
     template_name = 'diary/diary_detail.html'
@@ -56,19 +58,25 @@ class DiaryDeleteView(DeleteView):
 @csrf_exempt
 def ajax_delete_diary(request, pk):
     try:
-        print(f"削除リクエスト受信: {pk}")  # ✅ デバッグ用
-        diary = get_object_or_404(Diary, pk=uuid.UUID(pk))  # ✅ `UUID` を明示的に変換！
+        print(f"削除リクエスト受信: {pk}")  
+        converted_pk = uuid.UUID(pk)  
+        print(f"変換後の UUID: {converted_pk}")  
+        diary = get_object_or_404(Diary, pk=converted_pk) 
         diary.delete()
         return JsonResponse({"message": "削除しました", "status": "success"})
+    except ValueError as ve:
+        print(f"UUID変換エラー: {ve}") 
+        return JsonResponse({"message": f"UUID変換エラー: {ve}", "status": "error"}, status=400)
     except Exception as e:
-        return JsonResponse({"message": f"エラー: {str(e)}", "status": "error"}, status=400)
-    
-    
+        print(f"削除エラー: {e}")  
+        return JsonResponse({"message": f"削除エラー: {str(e)}", "status": "error"}, status=400)
+
 #todo
 class TodoListView(ListView):
     template_name = 'todo/todo_list.html'
     model = Todo 
     context_object_name = 'todo_list'
+    queryset = Todo.objects.all().order_by('-id')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
