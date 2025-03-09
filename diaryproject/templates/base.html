@@ -35,6 +35,8 @@
         {% endblock %}
     </main>
 
+    <input type="hidden" id="csrf_token" value="{% csrf_token %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     {% bootstrap_javascript %}
 </body>
 </html>

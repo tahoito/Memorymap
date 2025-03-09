@@ -22,6 +22,7 @@
                             </p>
                             </div>
                             <p class="card-date">{{ diary.date }}</p>
+                            <button class="delete-btn" data-id="{{ diary.pk }}">削除</button>
                             <div class="line"></div>
                         </div>
                     </div>
@@ -58,4 +59,5 @@
         <p><a href="{% url 'diary:todo_list' %}">TODOを書く</a></p>
     </div>
 </main>
+<script src="{% static 'js/delete.js' %}"></script>
 {% endblock %}

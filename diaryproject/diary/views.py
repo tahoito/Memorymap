@@ -2,8 +2,12 @@ from time import timezone
 from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView
 from django.views.generic import CreateView,DetailView,UpdateView,DeleteView
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 
 from diary.models import Diary,Todo
+import uuid 
 
 from .forms import DiaryForm,TodoForm
 from django.urls import reverse_lazy
@@ -46,11 +50,20 @@ class DiaryUpdateView(UpdateView):
         return super().form_valid(form)
     
 class DiaryDeleteView(DeleteView):
-    template_name = 'diary/diary_delete.html'
     model = Diary
     success_url = reverse_lazy('diary:diary_list')
 
-
+@csrf_exempt
+def ajax_delete_diary(request, pk):
+    try:
+        print(f"削除リクエスト受信: {pk}")  # ✅ デバッグ用
+        diary = get_object_or_404(Diary, pk=uuid.UUID(pk))  # ✅ `UUID` を明示的に変換！
+        diary.delete()
+        return JsonResponse({"message": "削除しました", "status": "success"})
+    except Exception as e:
+        return JsonResponse({"message": f"エラー: {str(e)}", "status": "error"}, status=400)
+    
+    
 #todo
 class TodoListView(ListView):
     template_name = 'todo/todo_list.html'
