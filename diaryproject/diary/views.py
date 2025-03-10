@@ -3,8 +3,7 @@ from django.shortcuts import render,redirect
 from django.views.generic import TemplateView,ListView
 from django.views.generic import CreateView,DetailView,UpdateView,DeleteView
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
+
 
 from diary.models import Diary,Todo
 import uuid 
@@ -53,23 +52,9 @@ class DiaryUpdateView(UpdateView):
     
 class DiaryDeleteView(DeleteView):
     model = Diary
+    template_name = 'diary/diary_delete.html'
     success_url = reverse_lazy('diary:diary_list')
 
-@csrf_exempt
-def ajax_delete_diary(request, pk):
-    try:
-        print(f"削除リクエスト受信: {pk}")  
-        converted_pk = uuid.UUID(pk)  
-        print(f"変換後の UUID: {converted_pk}")  
-        diary = get_object_or_404(Diary, pk=converted_pk) 
-        diary.delete()
-        return JsonResponse({"message": "削除しました", "status": "success"})
-    except ValueError as ve:
-        print(f"UUID変換エラー: {ve}") 
-        return JsonResponse({"message": f"UUID変換エラー: {ve}", "status": "error"}, status=400)
-    except Exception as e:
-        print(f"削除エラー: {e}")  
-        return JsonResponse({"message": f"削除エラー: {str(e)}", "status": "error"}, status=400)
 
 #todo
 class TodoListView(ListView):
