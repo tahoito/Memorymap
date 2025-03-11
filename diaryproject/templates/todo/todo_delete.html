@@ -1,10 +1,26 @@
-{% extends "base.html" %}
-{% load static %}
+<!-- モーダルウィンドウ -->
+<div class="modal fade" id="deleteModal-{{ todo.id }}" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">データの削除</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>「{{ todo.memo }}」を削除してもよろしいですか ?</p>
+            </div>
+            <div class="modal-footer">
+                <form method="POST" action="{% url 'diary:todo_delete' todo.id %}">
+                    {% csrf_token %}
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                    <button type="submit" class="btn btn-danger">削除</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-{% block title %}ホーム - MemoryMap{% endblock %}
-
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/todo.css' %}">{% endblock %}
-
-{% block content %}
-
-{% endblock %}
+<!-- BootstrapのJSを読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

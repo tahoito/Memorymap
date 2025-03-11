@@ -13,4 +13,5 @@ urlpatterns = [
 
     #todo
     path('todo/list',views.TodoListView.as_view(),name='todo_list'),
+    path('todo/delete/<int:pk>',views.TodoDeleteView.as_view(),name='todo_delete'),
 ]

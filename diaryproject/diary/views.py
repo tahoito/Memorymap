@@ -21,7 +21,6 @@ class IndexView(TemplateView):
         context['todo_list'] = Todo.objects.all().order_by('-id') 
         return context 
     
-    
 class DiaryCreateView(CreateView):
     template_name = 'diary/diary_create.html'
     form_class = DiaryForm
@@ -52,7 +51,6 @@ class DiaryUpdateView(UpdateView):
     
 class DiaryDeleteView(DeleteView):
     model = Diary
-    template_name = 'diary/diary_delete.html'
     success_url = reverse_lazy('diary:diary_list')
 
 
@@ -74,11 +72,10 @@ class TodoListView(ListView):
             form.save()
             return redirect('diary:todo_list')
         return self.get(request, *args, **kwargs) 
-
     
 
+
 class TodoDeleteView(DeleteView):
-    template_name = 'todo/todo_delete.html'
     model = Todo
     success_url = reverse_lazy('diary:todo_list')
 

@@ -1,5 +1,6 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="deleteModal-{{diary.pk}}">
-    <div class="modal-dialog" role="document">
+<!-- モーダルウィンドウ -->
+<div class="modal fade" tabindex="-1" role="dialog" id="deleteModal-{{ diary.pk|slugify }}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">データの削除</h5>
@@ -11,7 +12,7 @@
                 <p>削除すると元に戻すことはできません。よろしいでしょうか？</p>
             </div>
             <div class="modal-footer">
-                <form method="POST" action="{% url diary:diary_delete' diary.pk %}">{% csrf_token %}
+                <form method="POST" action="{% url 'diary:diary_delete' diary.pk %}">{% csrf_token %}
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-danger">DELETE</button>
                 </form>
@@ -19,3 +20,6 @@
         </div>
     </div>
 </div>
+
+<!-- BootstrapのJSを読み込む -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

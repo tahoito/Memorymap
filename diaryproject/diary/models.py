@@ -13,6 +13,7 @@ class Diary(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Todo(models.Model):
+    id = models.AutoField(primary_key=True)
     time = models.DateTimeField(verbose_name="作成日", default=timezone.now)
     memo = models.TextField()
     is_completed = models.BooleanField(default=False)
