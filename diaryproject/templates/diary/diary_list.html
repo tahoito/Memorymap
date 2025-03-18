@@ -19,7 +19,7 @@
                                 <p class="card-text">{{ diary.text|truncatechars:50 }}<a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a></p>
                             </div>
                             <p class="card-date">{{ diary.date }}</p>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal-{{diary.pk}}">削除</button>
+                            <button type="button" class="diary_delete" data-bs-toggle="modal" data-bs-target="#deleteModal-{{diary.pk}}"><i class="fa-solid fa-trash"></i></button>
                             {% include 'diary/diary_delete.html' %}
                             <div class="line"></div>
                         </div>

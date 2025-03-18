@@ -193,3 +193,12 @@ section.search{
 .write :active{
 	color:var(--btnColor);
 }
+
+.diary_delete{
+	color:gray;
+	text-align: right;
+}
+
+.diary_delete:hover{
+	color:var(--btnColor);
+}
