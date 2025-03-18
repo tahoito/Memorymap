@@ -131,6 +131,14 @@ h1.mydiary{
 	box-shadow: none; /* 影を削除*/
 }
 
+.card-body {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    justify-content: space-between; /* 上下に適度なスペースを作る */
+    height: 100%; /* カードの高さを統一 */
+}
+
+
 .card-title{
     font-weight: bold;
 }
@@ -144,13 +152,20 @@ h1.mydiary{
     align-items: baseline;
 }
 
+.card-footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: auto; 
+    padding-top: 10px; 
+}
 
 
 .card-date{
     color: gray;
     font-size:10px;
-    padding-bottom: 10px;
 }
+
 
 .btn-primary{
     font-size:13px;
@@ -194,11 +209,18 @@ section.search{
 	color:var(--btnColor);
 }
 
-.diary_delete{
-	color:gray;
-	text-align: right;
-}
 
 .diary_delete:hover{
 	color:var(--btnColor);
 }
+
+.diary_delete {
+    margin-left: auto; /* 右寄せ */
+    border: none;
+    background: none;
+    color: gray;
+}
+
+
+
+
