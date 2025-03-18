@@ -157,15 +157,17 @@ h1.mydiary{
     justify-content: space-between; 
     align-items: center; 
     margin-top: auto; 
-    padding-top: 10px; 
+	background: none; 
+    border-top: none; 
+	padding-left:0px;
+	padding-bottom:0px;
 }
-
 
 .card-date{
     color: gray;
     font-size:10px;
+	margin-left: 0;
 }
-
 
 .btn-primary{
     font-size:13px;
@@ -219,6 +221,7 @@ section.search{
     border: none;
     background: none;
     color: gray;
+	font-size:17px;
 }
 
 
