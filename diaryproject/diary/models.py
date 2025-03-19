@@ -19,3 +19,17 @@ class Todo(models.Model):
     is_completed = models.BooleanField(default=False)
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class DiaryEntry(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    tags = models.ManyToManyField(Tag, blank=True)  # ハッシュタグ機能
+
+    def __str__(self):
+        return self.title
