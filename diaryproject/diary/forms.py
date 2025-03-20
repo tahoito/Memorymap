@@ -2,12 +2,16 @@ from django import forms
 from .models import Diary,Todo
 
 class DiaryForm(forms.ModelForm):
+    tags = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '#タグをスペース区切りで入力'})
+    )
+
     class Meta:
         model = Diary
         fields = {'date','title','text','tags'}
         widgets = {
             'date': forms.DateInput(attrs={'class': 'form-control col-2'}),
-            'tags': forms.TextInput(attrs={'class': 'form-control col-2'}),
             'title': forms.TextInput(attrs={'class': 'form-control col-2'}),
             'text': forms.Textarea(attrs={
                 'class': 'form-control custom-textarea',

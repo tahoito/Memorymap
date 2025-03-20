@@ -188,7 +188,7 @@ h1.mydiary{
 
 .write {
 	position: absolute;
-	bottom:10%;
+	bottom:20%;
 	right:25%;
 	font-size: 18px;
 }
@@ -241,80 +241,84 @@ h1.mydiary,h1.search_title{
 
 }
 
-/* 🔍 検索ボックス全体の配置 */
+
 section.search {
     background-color: var(--subColor);
     position: absolute;
-    top: 25%;
-    right: 5%;
+    top: 30%;
+    right: 15%;
     width: 350px;
-    height: auto;
+    height: 150px;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
 }
 
-/* 📌 検索ボックスのコンテンツ中央寄せ */
+
 .search-container {
     text-align: center;
 }
 
-/* 🔍 検索タイトル */
-.search-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* 📦 入力フォームの配置 */
+/* 🔍 検索ボックスのデザイン */
 .search-box {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
 
-/* 🔍 入力フォームのスタイル */
-.search-input {
-    width: 90%;
-    padding: 10px;
-    font-size: 1rem;
+/* 🏷 検索フォーム全体 */
+.search-form {
+    width: 100%;
+}
+
+/* 🔍 検索フォームを横並びにする */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #fff;
     border: 2px solid #ddd;
     border-radius: 10px;
-    outline: none;
-    transition: border-color 0.3s;
+    padding: 5px;
 }
 
-.search-input:focus {
-    border-color: var(--mainColor);
+/* 🔍 入力フォーム */
+.search-input {
+    flex-grow: 1; /* フォームがボタンより広がる */
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
 }
 
 /* 🔘 検索ボタン */
 .search-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--mainColor);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
+    width: 45px;
+    height: 45px;
+    color: var(--btnColor);
+    font-size: 1.2rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-btn:hover {
-    background-color: var(--darkMainColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px; /* フォームとボタンの間隔 */
 }
 
 /* 📱 スマホ対応 */
 @media (max-width: 768px) {
-    section.search {
-        position: static;
-        width: 90%;
-        margin: 20px auto;
-        top: auto;
-        right: auto;
+    .search-bar {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .search-input {
+        flex-grow: 1;
+    }
+
+    .search-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }

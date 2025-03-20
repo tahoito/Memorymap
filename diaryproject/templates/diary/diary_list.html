@@ -9,7 +9,7 @@
     <main class="main">
         <section class="diary">
             <div class="diary">
-                <h1 class="mydiary"><i class="fa-solid fa-book"></i>日記一覧</h1>
+                <h1 class="mydiary">日記一覧</h1>
                 <div class="row">
                     {% for diary in diary_list %}
                 <div class="col-12"> 
@@ -45,11 +45,15 @@
 
         <section class="search">
             <div class="search">
-                <h1 class="search_title"><i class="fa-solid fa-magnifying-glass"></i>日記検索</h1>
+                <h1 class="search_title"></i>日記検索</h1>
                 <div class="search-box">
                     <form action="{% url 'diary:diary_list' %}" method="GET" class="search-form">
-                        <input type="text" name="q" placeholder="検索 (#タグ or キーワード)" class="search-input">
-                        <button type="submit" class="search-btn">検索</button>
+                        <div class="search-bar">
+                            <input type="text" name="q" placeholder="検索 (#タグ or キーワード)" class="search-input">
+                            <button type="submit" class="search-btn">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

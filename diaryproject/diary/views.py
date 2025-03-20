@@ -31,7 +31,7 @@ class DiaryCreateView(CreateView):
         diary = form.save(commit=False)
         diary.save()
 
-        # タグ処理
+        # タグを処理して ManyToManyField に保存
         tag_names = form.cleaned_data["tags"].split()
         for tag_name in tag_names:
             if tag_name.startswith("#"):
