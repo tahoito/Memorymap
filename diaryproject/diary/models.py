@@ -16,7 +16,7 @@ class Diary(models.Model):
     text = models.CharField(verbose_name='本文',max_length=200)
     created_at = models.DateTimeField(verbose_name='作成日時',default=timezone.now)
     updated_at = models.DateTimeField(verbose_name='編集日時',blank=True,null=True)
-    tags = models.ManyToManyField(Tag, blank=True)
+    tags = models.ManyToManyField(Tag,verbose_name= 'タグ', blank=True)
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

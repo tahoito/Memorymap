@@ -9,12 +9,20 @@
     <main class="main">
         <section class="diary">
             <div class="diary">
+                <h1 class="mydiary"><i class="fa-solid fa-book"></i>日記一覧</h1>
                 <div class="row">
                     {% for diary in diary_list %}
                 <div class="col-12"> 
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a></h5>
+                            <div class="tags">
+                                {% for tag in diary.tags.all %}
+                                    <a href="{% url 'diary:diary_list' %}?q=#{{ tag.name }}" class="tag">#{{ tag.name }}</a>
+                                {% empty %}
+                                    <span class="no-tag">タグなし</span>
+                                {% endfor %}
+                            </div>
                             <div class="text">
                                 <p class="card-text">{{ diary.text|truncatechars:50 }}<a href="{% url 'diary:diary_detail' diary.pk %}" class="btn btn-primary">&nbsp;...続き</a></p>
                             </div>
@@ -24,13 +32,6 @@
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                                 {% include 'diary/diary_delete.html' %}
-                            </div>
-                            <div class="tags">
-                                {% for tag in diary.tags.all %}
-                                    <a href="{% url 'diary:diary_list' %}?q=#{{ tag.name }}" class="tag">#{{ tag.name }}</a>
-                                {% empty %}
-                                    <span class="no-tag">タグなし</span>
-                                {% endfor %}
                             </div>
                             <div class="line"></div>
                         </div>
@@ -43,11 +44,14 @@
         </section>
 
         <section class="search">
-            <div class="search-box">
-                <form action="{% url 'diary:diary_list' %}" method="GET" class="search-form">
-                    <input type="text" name="q" placeholder="検索 (#タグ or キーワード)" class="search-input">
-                    <button type="submit" class="search-btn">検索</button>
-                </form>
+            <div class="search">
+                <h1 class="search_title"><i class="fa-solid fa-magnifying-glass"></i>日記検索</h1>
+                <div class="search-box">
+                    <form action="{% url 'diary:diary_list' %}" method="GET" class="search-form">
+                        <input type="text" name="q" placeholder="検索 (#タグ or キーワード)" class="search-input">
+                        <button type="submit" class="search-btn">検索</button>
+                    </form>
+                </div>
             </div>
         </section>
 
