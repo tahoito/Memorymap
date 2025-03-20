@@ -25,6 +25,13 @@
                                 </button>
                                 {% include 'diary/diary_delete.html' %}
                             </div>
+                            <div class="tags">
+                                {% for tag in diary.tags.all %}
+                                    <a href="{% url 'diary:diary_list' %}?q=#{{ tag.name }}" class="tag">#{{ tag.name }}</a>
+                                {% empty %}
+                                    <span class="no-tag">タグなし</span>
+                                {% endfor %}
+                            </div>
                             <div class="line"></div>
                         </div>
                     </div>
@@ -36,7 +43,12 @@
         </section>
 
         <section class="search">
-
+            <div class="search-box">
+                <form action="{% url 'diary:diary_list' %}" method="GET" class="search-form">
+                    <input type="text" name="q" placeholder="検索 (#タグ or キーワード)" class="search-input">
+                    <button type="submit" class="search-btn">検索</button>
+                </form>
+            </div>
         </section>
 
         <div class="write">

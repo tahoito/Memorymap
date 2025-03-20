@@ -4,7 +4,7 @@ from .models import Diary,Todo
 class DiaryForm(forms.ModelForm):
     class Meta:
         model = Diary
-        fields = {'date','title','text'}
+        fields = {'date','title','text','tags'}
         widgets = {
             'date': forms.DateInput(attrs={'class': 'form-control col-2'}),
             'title': forms.TextInput(attrs={'class': 'form-control col-2'}),
@@ -12,6 +12,7 @@ class DiaryForm(forms.ModelForm):
                 'class': 'form-control custom-textarea',
                 'rows': 6  # ← 6行分の高さを確保
             }),  
+            'tags': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
 class TodoForm(forms.ModelForm):

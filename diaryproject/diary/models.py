@@ -3,6 +3,12 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 import uuid
 
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+    
 class Diary(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     date = models.DateField(verbose_name='日付',default=timezone.now)
@@ -10,7 +16,11 @@ class Diary(models.Model):
     text = models.CharField(verbose_name='本文',max_length=200)
     created_at = models.DateTimeField(verbose_name='作成日時',default=timezone.now)
     updated_at = models.DateTimeField(verbose_name='編集日時',blank=True,null=True)
+    tags = models.ManyToManyField(Tag, blank=True)
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
 
 class Todo(models.Model):
     id = models.AutoField(primary_key=True)
@@ -19,17 +29,5 @@ class Todo(models.Model):
     is_completed = models.BooleanField(default=False)
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     
-class Tag(models.Model):
-    name = models.CharField(max_length=50, unique=True)
-
     def __str__(self):
-        return self.name
-
-class DiaryEntry(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    tags = models.ManyToManyField(Tag, blank=True)  # ハッシュタグ機能
-
-    def __str__(self):
-        return self.title
+        return f"{self.memo[:20]}..."
