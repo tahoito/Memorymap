@@ -17,15 +17,16 @@
 <body>
     <header>
         <div class="logo">
-            <a href="{% url 'diary:index' %}"><h1>MemoryMap</h1></a>
-        </div>
+            <h1>MemoryMap</h1>
+            <a href="{% url 'diary:index' %}" class="home-link"></a>
+        </div>        
         <nav>
             <ul>
                 <li><a href="{% url 'diary:index' %}">ホーム</a></li>
                 <li><a href="{% url 'diary:diary_list' %}">日記</a></li>
                 <li><a href="{% url 'diary:todo_list' %}">TODO</a></li>
                 <li>カレンダー</li>
-                <li><div class=user-icon><i class="fa-solid fa-user"></i></div></li>
+                <li><div class="user-icon"><i class="fa-solid fa-user"></i></div></li>
             </ul>
         </nav>
     </header>

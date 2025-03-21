@@ -69,11 +69,18 @@ a {
     text-decoration: none;
 }
 
+
 /* ホバー時（マウスを乗せたとき）もアンダーラインなし */
 a:hover,
 a:active {
     text-decoration: none;
 	color: var(--btnColor);
+}
+
+.logo::before,
+.logo::after {
+    content: none !important;
+    display: none !important;
 }
 
 
