@@ -59,8 +59,13 @@
         </section>
 
         <div class="write">
-            <p><a href="{% url 'diary:diary_create' %}">日記を書く</a></p>
-            <p><a href="#">カレンダーを見る</a></p>
+            <a href="{% url 'diary:diary_create' %}" class="icon-btn">
+                <i class="fa-solid fa-book"></i>
+            </a>
+              
+            <a href="{% url 'diary:todo_list' %}" class="icon-btn">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </a>          
         </div>
     <script src="{% static 'js/delete.js' %}"></script>
 {% endblock %}

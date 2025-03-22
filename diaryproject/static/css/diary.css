@@ -186,22 +186,38 @@ h1.mydiary{
 }
 
 
+
 .write {
 	position: absolute;
-	bottom:20%;
-	right:25%;
-	font-size: 18px;
+	bottom: 5%; 
+	right: 10%; 
+	display: flex; 
+	gap: 15px; 
 }
 
-.write p{
-	padding-top:10px;
+/* ボタンスタイルはそのままOK！ */
+.icon-btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	background-color: var(--btnColor);
+	color: white;
+	border-radius: 50%;
+	font-size: 23px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
 }
 
-.write :hover,
-.write :active{
-	color:var(--btnColor);
+.icon-btn:hover {
+	color: var(--btnColor);
+	background-color: white;
 }
 
+.icon-btn {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 .diary_delete:hover{
 	color:var(--btnColor);
