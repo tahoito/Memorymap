@@ -1,58 +1,69 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
-
 {% load static %}
 
 {% block title %}ホーム - MemoryMap{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/create.css' %}">{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
+{% endblock %}
 
 {% block content %}
-    <section class="create">
-        <div class="create">
-        <form method="post">
-            {% csrf_token %}
-            <div class="date">
-                <div class="form-group">
-                    <label>{{ form.date.label }}</label>
-                    {{ form.date|add_class:"form-control col-4" }}
+<div class="diary-container">
+    <form method="post">
+        {% csrf_token %}
+
+        <section class="create">
+            <div class="create">
+                <div class="date">
+                    <div class="form-group">
+                        <label>{{ form.date.label }}</label>
+                        {{ form.date|add_class:"form-control col-4" }}
+                    </div>
+                </div> 
+                <div class="title">            
+                    <div class="form-group">
+                        <label>{{ form.title.label }}</label>
+                        {{ form.title|add_class:"form-control col-6" }}
+                    </div>
                 </div>
-            </div> 
-            <div class="title">            
-                <div class="form-group">
-                    <label>{{ form.title.label }}</label>
-                    {{ form.title|add_class:"form-control col-6" }}
+                <div class="tags">
+                    <div class="form-group">
+                        <label>{{ form.tags.label }}</label>
+                        {{ form.tags|add_class:"form-control col-6" }}
+                    </div>
                 </div>
-            </div>
-            <div class="tags">
-                <div class="form-group">
-                    <label>{{ form.tags.label }}</label>
-                    {{ form.tags|add_class:"form-control col-6" }}
+                <div class="text">
+                    <div class="form-group">
+                        <label>{{ form.text.label }}</label>
+                        {{ form.text|add_class:"form-control col-10 custom-textarea" }}
+                    </div>
                 </div>
-            </div>
-            <div class="text">
-                <div class="form-group">
-                    <label>{{ form.text.label }}</label>
-                    {{ form.text|add_class:"form-control col-10 custom-textarea" }}
-                </div>
-            </div>
                 
-            {% if form.errors %}
-            <div class="alert alert-danger">
-                <strong>エラーがあります:</strong>
-                <ul>
-                {% for field, errors in form.errors.items %}
-                    {% for error in errors %}
-                        <li>{{ field }}: {{ error }}</li>
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>エラーがあります:</strong>
+                    <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ field }}: {{ error }}</li>
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
-                </ul>
+                    </ul>
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
+        </section>
+
+        <!-- 右：画像とボタン -->
+        <div class="side-area">
+            <div class="image-area">
+                <p>ここに画像アップ予定</p>
+            </div>
+            <div class="write_bottom">
+                <button type="submit" class="btn btn-primary">日記を投稿する</button>
+            </div>
         </div>
-    </section>
-    <div class="write_bottom">
-        <button type="submit" class="btn btn-primary">日記を投稿する</button>
-    </div>
     </form>
+</div>
 {% endblock %}

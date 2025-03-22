@@ -84,6 +84,57 @@ a:active {
     padding: 20px;
 }
 
+.diary-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 130px;
+}
+.diary-container form {
+	display: flex;
+	gap: 40px;
+}
+
+
+section.create {
+	background-color: white;
+	width: 600px;
+	border-radius: 30px;
+	padding-bottom: 40px;
+	min-height: 500px;
+}
+
+/* 中のパディングそのまま使う */
+section.create .create {
+	padding-left: 5%;
+	padding-top: 3%;
+	padding-right: 5%;
+}
+
+/* 右：画像とボタン */
+.side-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 200px;
+}
+
+.image-area {
+	height: 200px;
+	background-color: #eee;
+	border: 2px dashed #ccc;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #aaa;
+	font-size: 14px;
+}
+
+.write_bottom {
+	text-align: right;
+	margin-top: 20px;
+}
+
 
 .btn-primary{
     font-size:20px;
@@ -101,22 +152,6 @@ a:active {
 
 }
 
-
-section.create{
-	background-color: white;
-	position: absolute;
-	top:15%;
-	left:10%;
-	width: 600px;
-	height: 550px;
-	border-radius: 30px;
-}
-
-section.create .create{
-	padding-left: 5%;
-	padding-top: 3%;
-	padding-right: 5%;
-}
 
 
 .custom-textarea {
@@ -141,11 +176,4 @@ section.create .create{
 	padding-top:40px;
 }
 
-
-.write_bottom{
-	position: absolute;
-	bottom:15%;
-	right:20%;
-	font-size: 18px;
-}
 
