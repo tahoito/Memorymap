@@ -6,7 +6,6 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
 
 {% block content %}
-<main class="main">
     <section class="diary">
         <div class="diary">
             <h1 class="mydiary"><i class="fa-solid fa-book"></i>日記</h1>
@@ -54,9 +53,14 @@
     </section>
 
     <div class="write">
-        <p><a href="{% url 'diary:diary_create' %}">日記を投稿する</a></p>
-        <p><a href="{% url 'diary:todo_list' %}">TODOを書く</a></p>
+        <a href="{% url 'diary:diary_create' %}" class="icon-btn">
+            <i class="fa-solid fa-book"></i>
+        </a>
+          
+        <a href="{% url 'diary:todo_list' %}" class="icon-btn">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </a>          
     </div>
-</main>
+
 <script src="{% static 'js/delete.js' %}"></script>
 {% endblock %}

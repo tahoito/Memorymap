@@ -6,18 +6,16 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/create.css' %}">{% endblock %}
 
 {% block content %}
-<main class="main">
-    <section class="create">
-        <div class="create">
-            <div class="date_detail">{{ diary.date }}</div>
-            <div class="title_detail">{{ diary.title }}</div>
-            <div class="text_detail"><p>{{ diary.text }}</p></div>
-        </div>
-    </section>
+<section class="create">
+    <div class="create">
+        <div class="date_detail">{{ diary.date }}</div>
+        <div class="title_detail">{{ diary.title }}</div>
+        <div class="text_detail"><p>{{ diary.text }}</p></div>
+    </div>
+</section>
 
-    <div class="write_bottom">
-        <p><a href="{% url 'diary:index' %}">ホームに戻る</a></p>
-        <p><a href="{% url 'diary:diary_update' diary.pk %}">日記を編集する</a></p>
-    </div> 
-</main>
+<div class="write_bottom">
+    <p><a href="{% url 'diary:index' %}">ホームに戻る</a></p>
+    <p><a href="{% url 'diary:diary_update' diary.pk %}">日記を編集する</a></p>
+</div> 
 {% endblock %}

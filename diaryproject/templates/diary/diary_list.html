@@ -6,7 +6,6 @@
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/diary.css' %}">{% endblock %}
 
 {% block content %}
-    <main class="main">
         <section class="diary">
             <div class="diary">
                 <h1 class="mydiary">日記一覧</h1>
@@ -63,6 +62,5 @@
             <p><a href="{% url 'diary:diary_create' %}">日記を書く</a></p>
             <p><a href="#">カレンダーを見る</a></p>
         </div>
-    </main>
     <script src="{% static 'js/delete.js' %}"></script>
 {% endblock %}
