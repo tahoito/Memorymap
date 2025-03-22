@@ -236,7 +236,7 @@ h1.today{
 	align-items: center;
 	width: 60px;
 	height: 60px;
-	background-color: var(--btnColor);
+	background-color: var(--accentColor);
 	color: white;
 	border-radius: 50%;
 	font-size: 23px;
@@ -245,8 +245,8 @@ h1.today{
 }
 
 .icon-btn:hover {
-	color: var(--btnColor);
-	background-color: white;
+	background-color: var(--btnColor);
+	color: white;
 }
 
 .icon-btn {

@@ -202,7 +202,7 @@ h1.mydiary{
 	align-items: center;
 	width: 60px;
 	height: 60px;
-	background-color: var(--btnColor);
+	background-color: var(--accentColor);
 	color: white;
 	border-radius: 50%;
 	font-size: 23px;
@@ -211,8 +211,7 @@ h1.mydiary{
 }
 
 .icon-btn:hover {
-	color: var(--btnColor);
-	background-color: white;
+	background-color: var(--btnColor);
 }
 
 .icon-btn {

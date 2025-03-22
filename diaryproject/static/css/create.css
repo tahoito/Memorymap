@@ -87,9 +87,9 @@ a:active {
 
 .btn-primary{
     font-size:20px;
-    color:black;
-	background-color: var(--accentColor);
-	border: var(--accentColor);
+    color:white;
+	background-color: var(--btnColor);
+	border: var(--btnColor);
 }
 
 .btn-primary:hover,
@@ -105,7 +105,7 @@ a:active {
 section.create{
 	background-color: white;
 	position: absolute;
-	top:20%;
+	top:15%;
 	left:10%;
 	width: 600px;
 	height: 550px;
