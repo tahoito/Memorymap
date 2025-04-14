@@ -239,7 +239,7 @@ h1.today{
 	background-color: var(--accentColor);
 	color: white;
 	border-radius: 50%;
-	font-size: 23px;
+	font-size: 22px;
 	text-decoration: none;
 	transition: background-color 0.3s ease;
 }

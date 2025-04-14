@@ -9,12 +9,13 @@
 {% endblock %}
 
 {% block content %}
+{% spaceless %}
 <div class="diary-container">
     <form method="post">
         {% csrf_token %}
 
         <section class="create">
-            <div class="create">
+            <div class="form-inner">
                 <div class="date">
                     <div class="form-group">
                         <label>{{ form.date.label }}</label>
@@ -64,6 +65,8 @@
                 <button type="submit" class="btn btn-primary">日記を投稿する</button>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 </div>
+{% endspaceless %}
 {% endblock %}

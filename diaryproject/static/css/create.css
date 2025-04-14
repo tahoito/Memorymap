@@ -87,13 +87,12 @@ a:active {
 .diary-container {
 	display: flex;
 	justify-content: center;
-	margin-top: 130px;
+	margin-top: 100px;
 }
 .diary-container form {
 	display: flex;
 	gap: 40px;
 }
-
 
 section.create {
 	background-color: white;
@@ -104,7 +103,7 @@ section.create {
 }
 
 /* 中のパディングそのまま使う */
-section.create .create {
+section.create .form-inner {
 	padding-left: 5%;
 	padding-top: 3%;
 	padding-right: 5%;
