@@ -19,7 +19,7 @@
                                 {% for tag in diary.tags.all %}
                                     <a href="{% url 'diary:diary_list' %}?q=#{{ tag.name }}" class="tag">#{{ tag.name }}</a>
                                 {% empty %}
-                                    <span class="no-tag">タグなし</span>
+                                    <span class="no-tag">タグ</span>
                                 {% endfor %}
                             </div>
                             <div class="text">
